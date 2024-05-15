@@ -89,8 +89,6 @@ XATA_DB_URL=
 
 - 运行`create_xata_table.py` 
 
-​	(如果你使用了github的api，建议之后的操作都挂vpn)
-
 ​	如果代码顺利运行，将输出`Database tables created successfully.`
 
 ![image-20240514213855128](./readme.assets/image-20240514213855128.png)
