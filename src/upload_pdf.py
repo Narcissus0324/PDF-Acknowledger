@@ -21,7 +21,7 @@ def upload_file(table_name, record_id, file_path, column_name):
         )
         return response
 
-upload_dir = "../upload"
+upload_dir = "../uploads"
 for file_name in os.listdir(upload_dir):
     file_path = os.path.join(upload_dir, file_name)
     _, file_extension = os.path.splitext(file_name)  # 获取文件后缀

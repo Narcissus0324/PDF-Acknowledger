@@ -1,10 +1,16 @@
 ## 0.运行环境
 
-​	pycharm（为了防止你配不好环境，我抛弃了vscode，是不是很贴心！）
+​	Pycharm2024（为了防止你配不好环境，我抛弃了vscode，是不是很贴心！）
+
+​	Anaconda3
+
+​	Windows11
 
 ## 1.配置环境
 
 ### 1.1 创建conda环境
+
+​	在Anaconda prompt中
 
 ```bash
 conda create --name TG python=3.11
@@ -26,14 +32,20 @@ conda env list
 
 ### 1.2 配置依赖项
 
-在终端执行命令：
+在Pycharm终端执行命令：
 
 ```bash
 pip install python-dotenv
 pip install PyMuPDF
 ```
 
-![image-20240515013931674](./readme.assets/image-20240515013931674.png)
+<img src="./readme.assets/image-20240515013931674.png" alt="image-20240515013931674" style="zoom: 67%;" />
+
+注意，如果你想要在Anaconda prompt中执行命令，需要先激活虚拟环境
+
+```bash
+conda activate TG
+```
 
 ### 1.3 其他配置
 
@@ -51,7 +63,7 @@ ESG
 │   ├── create_xata_table.py                   # 用于创建xata数据表格的脚本
 │   ├── download_pdf.py                        # 用于下载PDF文件的脚本
 │   ├── upload_pdf.py                          # 用于上传PDF文件的脚本
-├── upload                 # 存放需要上传的文件
+├── uploads                 # 存放需要上传的文件
 ├── .env                   # 环境变量文件，存储敏感数据或配置
 └── readme.md              # 项目的Markdown格式的文档，说明项目信息和使用说明
 
@@ -89,6 +101,8 @@ XATA_DB_URL=
 ## 3.上传需要处理的PDF文件
 
 #### **注意：3、4步在期望多设备使用该项目是必要的**
+
+#### 但如果你只想在本地完成，你可以将待处理的文件存放到download文件夹下，然后直接跳转第5步
 
 - 将需要处理的PDF文件放到upload文件夹下
 
