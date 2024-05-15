@@ -32,19 +32,19 @@ conda env list
 
 ### 1.2 配置依赖项
 
-在Pycharm终端执行命令：
+​	在Pycharm终端执行命令（此时不使用vpn）：
 
 ```bash
-pip install python-dotenv
-pip install PyMuPDF
+pip install --upgrade pip -i https://pypi.tuna.tsinghua.edu.cn/simple
+pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+pip install -r requirements.txt --upgrade
 ```
 
-<img src="./readme.assets/image-20240515013931674.png" alt="image-20240515013931674" style="zoom: 67%;" />
-
-注意，如果你想要在Anaconda prompt中执行命令，需要先激活虚拟环境
+​	注意，如果你想要在Anaconda prompt中配置，请先执行下述命令
 
 ```bash
-conda activate TG
+conda activate TG # 激活环境
+cd PDF-Acknowledger # 进入该项目
 ```
 
 ### 1.3 其他配置
@@ -63,13 +63,14 @@ ESG
 │   ├── create_xata_table.py                   # 用于创建xata数据表格的脚本
 │   ├── download_pdf.py                        # 用于下载PDF文件的脚本
 │   ├── upload_pdf.py                          # 用于上传PDF文件的脚本
-├── uploads                 # 存放需要上传的文件
+├── uploads                # 存放需要上传的文件
 ├── .env                   # 环境变量文件，存储敏感数据或配置
+├── requirments.txt        # 依赖项
 └── readme.md              # 项目的Markdown格式的文档，说明项目信息和使用说明
 
 ```
 
-<img src="./readme.assets/image-20240515015425318.png" alt="image-20240515015425318" style="zoom: 67%;" />
+<img src="./readme.assets/image-20240515185741656.png" alt="image-20240515185741656" style="zoom:67%;" />
 
  **在文件根目录下**
 

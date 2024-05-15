@@ -1,0 +1,9 @@
+arrow
+Pyarrow
+PyPDF2
+PyMuPDF
+python-dotenv
+tenacity
+tiktoken
+unstructured[all-docs]
+xata

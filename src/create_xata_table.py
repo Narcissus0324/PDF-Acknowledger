@@ -13,7 +13,7 @@ table_schema = {
             "name": "name",
             "type": "string",
             "notNull": True,
-            "defaultValue": "Unnamed Report"  # 添加默认值
+            "defaultValue": "Unnamed Report"
         },
         {
             "name": "report",
