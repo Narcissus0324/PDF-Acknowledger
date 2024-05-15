@@ -21,6 +21,20 @@ def upload_file(table_name, record_id, file_path, column_name):
         )
         return response
 
+def check_name_exists(table_name, name):
+    '''检查指定表中是否存在指定名称的记录'''
+    query = {
+        "columns": ["name"],
+        "filter": {
+            "name": name
+        }
+    }
+    response = xata.data().query(table_name, query)
+    if response.is_success():
+        records = response.json().get('records', [])
+        return len(records) > 0
+    return False
+
 upload_dir = "../uploads"
 for file_name in os.listdir(upload_dir):
     file_path = os.path.join(upload_dir, file_name)
@@ -32,6 +46,11 @@ for file_name in os.listdir(upload_dir):
             "name": file_name_without_ext,
             "contentType": mimetypes.guess_type(file_path)[0] or 'application/octet-stream'
         }
+
+        if check_name_exists("ESG_Reports", file_name_without_ext):
+            print(f"Record with name {file_name_without_ext} already exists. Skipping...")
+            continue
+
         insert_response = xata.records().insert("ESG_Reports", record_data)
 
         if insert_response.is_success():

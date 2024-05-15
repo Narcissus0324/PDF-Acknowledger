@@ -12,6 +12,11 @@ def get_extension_from_content_type(content_type):
 
 xata = XataClient(api_key=os.getenv("XATA_API_KEY"), db_url=os.getenv("XATA_DB_URL"))
 
+# 创建download文件夹（如果不存在）
+download_dir = "../download"
+if not os.path.exists(download_dir):
+    os.makedirs(download_dir)
+
 # 查询数据库获取记录
 data = xata.data().query(
     "ESG_Reports",
@@ -33,6 +38,6 @@ for record in data["records"]:
         print(f"Content-Type header not found for record ID: {record['id']}")
         ext = '.pdf'  # 假设默认扩展名为.pdf，可以根据你的实际情况调整
 
-    with open("../download/" + record["id"] + ext, "wb") as f:
+    with open(os.path.join(download_dir, record["id"] + ext), "wb") as f:
         f.write(file.content)
     print(f"Downloaded {record['id']}{ext}")

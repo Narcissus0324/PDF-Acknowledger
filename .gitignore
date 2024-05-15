@@ -164,6 +164,7 @@ docs_output/
 esg_data/
 esg_pickle/
 esg_txt/
+esg_debug/
 *.log
 *log*.txt
 standards_pickle/
